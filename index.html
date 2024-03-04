@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="robots" content="noindex" />
+
+    <title>Caletrio</title>
+
+    <meta name="description" content="Redes Hacking & +" />
+    <meta name="author" content="Caletrio" />
+
+    <link rel="stylesheet" href="index.css" />
+
+    <!-- Agrega jQuery (puedes cambiar la versión según tus necesidades) -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+
+
+</head>
+
+<body>
+    <header id="myHeader" class="">
+        <nav>
+            <a href="#Caletrio">Caletrio</a>
+            <a href="#Proyectos">Proyectos</a>
+            <a href="#Contacto">Contacto</a>
+
+            <button id="openmenu">
+                <img id="logo2" src="logo.svg" alt="Caletrio">
+            </button>
+        </nav>
+    </header>
+    <div id="page" class="">
+        <div id="fondonegro" class="apagado">
+            <div class="efecto">
+                <div id="blob"></div>
+                <div id="blur"></div>
+            </div>
+            <section>
+                <h1 id="Caletrio">Caletrio</h1>
+            </section>
+        </div>
+        <section id="Proyectos">
+            <h1>Proyectos</h1>
+        </section>
+        <section id="Contacto">
+            <h1>Contacto</h1>
+        </section>
+    </div>
+    <footer>
+        <h2> Página en desarrollo </h2>
+    </footer>
+    <!-- Resto del código JS sigue igual -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var header = document.getElementById('myHeader');
+            var page = document.getElementById('page');
+            var openMenuButton = document.getElementById('openmenu');
+
+            window.addEventListener('scroll', function () {
+                page.classList.remove('menuopen');
+                if (window.scrollY >= 50) {
+                    header.classList.add('sticky');
+                } else {
+                    header.classList.remove('sticky');
+                }
+            });
+
+            // Event listener to remove the sticky class when the button is clicked
+            openMenuButton.addEventListener('click', function () {
+                header.classList.remove('sticky');
+                page.classList.add('menuopen');
+            });
+
+            // Ajuste en el selector para los enlaces del navbar
+            var links = document.querySelectorAll('nav a[href^="#"]');
+
+            links.forEach(function (link) {
+                link.addEventListener('click', function (event) {
+                    // Prevent the default action
+                    event.preventDefault();
+
+                    // Obtén el targetId sin el '#'
+                    var targetId = this.getAttribute('href').substring(1);
+
+                    // Obtén el elemento de destino
+                    var targetElement = document.getElementById(targetId);
+
+                    // Smooth scroll al elemento de destino
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Resto del código JS sigue igual
+
+
+
+
+    </script>
+    <script>
+        const fondonegro = document.getElementById("fondonegro");
+        const blob = document.getElementById("blob");
+
+        fondonegro.addEventListener("mouseenter", () => {
+            fondonegro.classList.remove("apagado");
+            fondonegro.classList.add("encendido");
+        });
+
+        fondonegro.addEventListener("mouseleave", () => {
+            fondonegro.classList.remove("encendido");
+            fondonegro.classList.add("apagado");
+        });
+
+        fondonegro.addEventListener("mousemove", (event) => {
+            if (fondonegro.classList.contains("encendido")) {
+                const { clientX, clientY } = event;
+                blob.style.left = `${clientX}px`;
+                blob.style.top = `${clientY}px`;
+            }
+        });
+
+    </script>
+</body>
+
+</html>
