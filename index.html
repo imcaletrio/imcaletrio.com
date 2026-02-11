@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>imcaletrio</title><script>
+      const supported = ["es", "en", "ru", "zh"];
+
+      const readSaved = () => {
+        try {
+          const v = (localStorage.getItem("im_locale") || "").toLowerCase();
+          return supported.includes(v) ? v : "";
+        } catch {
+          return "";
+        }
+      };
+
+      const pickFromBrowser = () => {
+        const langs = [...(navigator.languages || []), navigator.language || ""].filter(Boolean);
+
+        for (const l of langs) {
+          const c = String(l).toLowerCase();
+          const base = c.split("-")[0];
+          if (supported.includes(base)) return base;
+        }
+        return "en";
+      };
+
+      const next = readSaved() || pickFromBrowser();
+      location.replace("/" + next + "/");
+    </script><link rel="canonical" href="https://imcaletrio.com/en/"><link rel="alternate" hreflang="es" href="https://imcaletrio.com/es/"><link rel="alternate" hreflang="en" href="https://imcaletrio.com/en/"><link rel="alternate" hreflang="x-default" href="https://imcaletrio.com/en/"><meta name="description" content="Sitio oficial de imcaletrio. Blog, proyectos y redes sociales."></head> <body style="font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial; padding: 24px; line-height: 1.5;"> <h1 style="margin:0 0 12px 0;">imcaletrio</h1> <p style="margin:0 0 18px 0; opacity:.85;">Sitio oficial. Redirigiendo al idioma adecuado…</p> <ul style="margin:0; padding-left:18px;"> <li><a href="/es/">Español</a></li> <li><a href="/en/">English</a></li> <li><a href="/ru/">Русский</a></li> <li><a href="/zh/">中文</a></li> </ul> <noscript><p style="margin-top:18px;">Activa JavaScript para redirección automática.</p></noscript> </body></html>
