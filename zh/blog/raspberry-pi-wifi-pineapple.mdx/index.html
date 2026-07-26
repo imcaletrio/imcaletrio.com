@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="zh" data-astro-transition-scope="astro-mo47iqwu-1"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><meta name="theme-color" content="#0b0b0b" media="(prefers-color-scheme: dark)"><meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"><title>用你的 Raspberry Pi 取代 WiFi Pineapple | imcaletrio</title><meta name="description" content="完整教程：用大约三分之一的价格，把一台 Raspberry Pi 打造成与 WiFi Pineapple Pager 相同的无线军火库——硬件、命令和脚本一应俱全。"><meta name="robots" content="index,follow"><meta name="author" content="imcaletrio"><link rel="icon" href="/favicon.svg"><link rel="canonical" href="https://imcaletrio.com/zh/blog/raspberry-pi-wifi-pineapple.mdx/"><link rel="alternate" href="https://imcaletrio.com/es/blog/raspberry-pi-wifi-pineapple.mdx/" hreflang="es"><link rel="alternate" href="https://imcaletrio.com/en/blog/raspberry-pi-wifi-pineapple.mdx/" hreflang="en"><link rel="alternate" href="https://imcaletrio.com/zh/blog/raspberry-pi-wifi-pineapple.mdx/" hreflang="zh"><link rel="alternate" href="https://imcaletrio.com/ru/blog/raspberry-pi-wifi-pineapple.mdx/" hreflang="ru"><link rel="alternate" href="https://imcaletrio.com/en/blog/raspberry-pi-wifi-pineapple.mdx/" hreflang="x-default"><meta property="og:site_name" content="imcaletrio"><meta property="og:type" content="article"><meta property="og:title" content="用你的 Raspberry Pi 取代 WiFi Pineapple | imcaletrio"><meta property="og:description" content="完整教程：用大约三分之一的价格，把一台 Raspberry Pi 打造成与 WiFi Pineapple Pager 相同的无线军火库——硬件、命令和脚本一应俱全。"><meta property="og:url" content="https://imcaletrio.com/zh/blog/raspberry-pi-wifi-pineapple.mdx/"><meta property="og:image" content="https://imcaletrio.com/images/raspberry-pi-wifi-pineapple-zh.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="用你的 Raspberry Pi 取代 WiFi Pineapple | imcaletrio"><meta name="twitter:description" content="完整教程：用大约三分之一的价格，把一台 Raspberry Pi 打造成与 WiFi Pineapple Pager 相同的无线军火库——硬件、命令和脚本一应俱全。"><meta name="twitter:image" content="https://imcaletrio.com/images/raspberry-pi-wifi-pineapple-zh.jpg"><link rel="me" href="https://www.youtube.com/@imcaletrio"><link rel="me" href="https://www.tiktok.com/@imcaletrio"><link rel="me" href="https://www.instagram.com/imcaletrio/"><link rel="me" href="https://x.com/imcaletrio"><script type="application/ld+json">[{"@context":"https://schema.org","@type":"Organization","name":"imcaletrio","url":"https://imcaletrio.com/","logo":"https://imcaletrio.com/brand/logo-mark.svg","sameAs":["https://www.youtube.com/@imcaletrio","https://www.tiktok.com/@imcaletrio","https://www.instagram.com/imcaletrio/","https://x.com/imcaletrio"]},{"@context":"https://schema.org","@type":"WebSite","name":"imcaletrio","url":"https://imcaletrio.com/","inLanguage":"zh"},{"@context":"https://schema.org","@type":"BlogPosting","headline":"用你的 Raspberry Pi 取代 WiFi Pineapple","description":"完整教程：用大约三分之一的价格，把一台 Raspberry Pi 打造成与 WiFi Pineapple Pager 相同的无线军火库——硬件、命令和脚本一应俱全。","datePublished":"2026-07-26","dateModified":"2026-07-26","mainEntityOfPage":"https://imcaletrio.com/zh/blog/raspberry-pi-wifi-pineapple.mdx/","inLanguage":"zh","image":"https://imcaletrio.com/images/raspberry-pi-wifi-pineapple-zh.jpg","author":{"@type":"Person","name":"imcaletrio"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://imcaletrio.com/zh/"},{"@type":"ListItem","position":2,"name":"博客","item":"https://imcaletrio.com/zh/blog/"},{"@type":"ListItem","position":3,"name":"用你的 Raspberry Pi 取代 WiFi Pineapple"}]}]</script><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.QW52Ox2j.js"></script><script>
+      try{
+        const saved=localStorage.getItem("im_theme");
+        if(saved==="light"){document.documentElement.dataset.theme="light"}
+        if(saved==="dark" || !saved){document.documentElement.dataset.theme="dark"}
+      }catch{
+        document.documentElement.dataset.theme="dark"
+      }
+    </script><script type="module" src="/_astro/BaseLayout.astro_astro_type_script_index_0_lang.BU9dOO7o.js"></script><link rel="stylesheet" href="/_astro/_slug_.CCtNLKz7.css"><style>[data-astro-transition-scope="astro-mo47iqwu-1"] { view-transition-name: root; }@layer astro { ::view-transition-old(root) {
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(root) {
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(root) {
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(root) {
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-mo47iqwu-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-mo47iqwu-1"] {
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-mo47iqwu-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-mo47iqwu-1"] {
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-mo47iqwu-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-mo47iqwu-1"] {
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-mo47iqwu-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-mo47iqwu-1"] {
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head> <body class> <div id="im-loader" class="fixed inset-0 z-[100] pointer-events-none"> <div data-loader-stage class="absolute inset-0 opacity-0"> <canvas id="im-loader-canvas" class="absolute inset-0 w-full h-full"></canvas> <div class="absolute inset-0 grid place-items-center"> <img id="im-loader-animated-logo" src="/brand/logo-animado.svg" alt="imcaletrio" class="im-loader-logo select-none" draggable="false" style="opacity:0"> </div> </div> </div>  <div id="im-tfx" class="fixed inset-0 z-[90] pointer-events-none opacity-0" aria-hidden="true"> <canvas id="im-tfx-canvas" class="absolute inset-0 w-full h-full"></canvas> </div> <script type="module" src="/_astro/TransitionFX.astro_astro_type_script_index_0_lang.DZVm35nh.js"></script> <header class="sticky top-0 z-40 w-full backdrop-blur supports-[backdrop-filter]:bg-[rgba(var(--bg),0.75)]" data-header> <div class="im-header-inner w-full px-5 md:px-8 py-3 grid grid-cols-[1fr_auto_1fr] items-center"> <a href="/zh/" class="im-brand im-brand-link justify-self-start" aria-label="imcaletrio" title="imcaletrio"> <span class="im-brandmark" aria-hidden="true"></span> </a> <nav data-im-nav class="im-nav justify-self-center" aria-label="Main"> <span class="im-nav-indicator" aria-hidden="true"></span> <a class="im-navitem" href="/zh/"> <span class="im-navtext">首页</span> </a> <a class="im-navitem" href="/zh/blog/" data-active="1"> <span class="im-navtext">博客</span> </a> <a class="im-navitem" href="/zh/rrss/"> <span class="im-navtext">社交</span> </a> </nav> <div class="justify-self-end flex items-center gap-2 sm:gap-3"> <div class="relative"> <details class="relative" data-locale-menu> <summary class="im-locale-summary" data-lang-trigger aria-label="Idioma" title="Idioma"> <img src="/flags/zh.png" alt="ZH" width="18" height="18" class="im-locale-flag" loading="lazy"> </summary> <div class="im-locale-panel"> <div class="im-locale-row"> <span class="im-locale-indicator" aria-hidden="true"></span> <a href="/es/blog/raspberry-pi-wifi-pineapple.mdx/" class="im-locale-item" aria-label="es" title="ES"> <img src="/flags/es.png" alt="ES" width="18" height="18" class="im-locale-flag" loading="lazy"> </a><a href="/en/blog/raspberry-pi-wifi-pineapple.mdx/" class="im-locale-item" aria-label="en" title="EN"> <img src="/flags/en.png" alt="EN" width="18" height="18" class="im-locale-flag" loading="lazy"> </a><a href="/zh/blog/raspberry-pi-wifi-pineapple.mdx/" class="im-locale-item" data-active="1" aria-label="zh" title="ZH"> <img src="/flags/zh.png" alt="ZH" width="18" height="18" class="im-locale-flag" loading="lazy"> </a><a href="/ru/blog/raspberry-pi-wifi-pineapple.mdx/" class="im-locale-item" aria-label="ru" title="RU"> <img src="/flags/ru.png" alt="RU" width="18" height="18" class="im-locale-flag" loading="lazy"> </a> </div> </div> </details> </div> <button data-theme-toggle aria-label="主题" class="im-theme-btn rounded-xl w-10 h-9 grid place-items-center relative overflow-hidden"> <svg class="im-theme-ico im-theme-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"> <path d="M21 14.2A7.6 7.6 0 0 1 9.8 3 9 9 0 1 0 21 14.2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg> <svg class="im-theme-ico im-theme-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"> <circle cx="12" cy="12" r="5.2" fill="currentColor"></circle> <path d="M12 2.2v2.2M12 19.6v2.2M4.6 4.6l1.55 1.55M17.85 17.85l1.55 1.55M2.2 12h2.2M19.6 12h2.2M4.6 19.4l1.55-1.55M17.85 6.15l1.55-1.55" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path> </svg> </button> </div> </div> </header> <main class="container pt-10 vt-main">  <article class="w-full"> <a href="/zh/blog/" class="inline-flex items-center justify-center w-9 h-9 rounded-full text-[rgb(var(--muted))] hover:text-[rgb(var(--accent))] hover:bg-[rgba(255,255,255,0.04)] transition" aria-label="返回" title="返回"> <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" class="w-4 h-4"> <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg> <span class="sr-only">返回</span> </a> <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight mt-4 text-white hover:text-[rgb(var(--accent))] transition-colors duration-200" data-animate="in">用你的 Raspberry Pi 取代 WiFi Pineapple</h1> <p class="text-[rgb(var(--muted))] mt-3" data-animate="in">完整教程：用大约三分之一的价格，把一台 Raspberry Pi 打造成与 WiFi Pineapple Pager 相同的无线军火库——硬件、命令和脚本一应俱全。</p> <div class="flex flex-wrap items-center gap-3 text-sm text-[rgb(var(--muted))] mt-4" data-animate="in"> <time datetime="2026-07-26">2026-07-26</time> </div> <div class="prose mt-10" data-animate="in">  <div class="im-post"><div class="im-callout"><div class="im-callout-title"><span class="im-badge">注意</span><span>仅限你自己的网络或获得书面授权后使用</span></div><p>仅在<strong>你自己的网络</strong>、<strong>隔离的实验环境</strong>或<strong>获得书面授权的渗透测试</strong>中使用。</p></div>
+
+<h2>第二部分：从评测到实机搭建</h2>
+<p>在 <a href="/zh/blog/wifi-pineapple-pager.mdx/">WiFi Pineapple Pager 评测</a>中，我们得出了一个对这台约 300 欧元的设备来说颇为尴尬的结论：它做的几乎所有事情——recon、Evil Twin、抓取 handshake、captive portal——都不过是跑在 Linux 上的软件。所以在这第二部分，我们不再停留在理论，而是<strong>自己动手搭建</strong>：一台 Raspberry Pi，用三分之一的价格做到同样的事——在好几个方面甚至更强。</p>
+
+<h3>我们要做什么，以及为什么</h3>
+<p><strong>做什么：</strong>把一台 Raspberry Pi + 一块支持 injection 的 WiFi 网卡 + 一个移动电源，变成与 Pager 等效的便携装备，拥有同样的无线军火库。</p>
+<p><strong>为什么：</strong>因为它底层就是 Linux，跑的是完全相同的那套工具（aircrack-ng、bettercap、hostapd、hcxdumptool……）。事实上，Pager 上几乎所有像样的 payload 都是 bash 或 python 写的：直接拷到 Pi 上照样跑。而且，掌握了整个系统的完全控制权，你可以无限扩展它，并在本地破解密码，无需依赖云端。</p>
+
+<h2>回顾：Pi 对比 Pineapple Pager</h2>
+<p>我们在评测里逐项能力做了拆解；这里是开工前的快速总结：</p>
+
+<div class="im-card"><table class="im-table"><thead><tr><th>能力</th><th>Raspberry Pi</th><th>Pineapple Pager</th></tr></thead><tbody>
+<tr><td>抓取 handshake</td><td>✓ aircrack-ng</td><td>✓</td></tr>
+<tr><td>Evil Twin / Rogue AP</td><td>✓ hostapd + dnsmasq</td><td>✓ PineAP</td></tr>
+<tr><td>WPA-Enterprise（evil twin）</td><td>✓ eaphammer</td><td>有限支持</td></tr>
+<tr><td>MITM / sniffing</td><td>✓ bettercap</td><td>基础功能</td></tr>
+<tr><td>强制门户 / 钓鱼</td><td>✓ wifiphisher、caplets</td><td>✓ 模块</td></tr>
+<tr><td>本地密码破解</td><td>✓ 本地 CPU/GPU</td><td>✗ 依赖云端</td></tr>
+<tr><td>图形桌面 + VNC</td><td>✓ Wireshark、浏览器</td><td>✗ 仅 web UI</td></tr>
+<tr><td>20 公里外远程控制（CGNAT）</td><td>✓ 原生 Tailscale</td><td>需额外 payload</td></tr>
+<tr><td>可用任意工具扩展</td><td>✓ 完整 Linux</td><td>封闭生态</td></tr>
+<tr><td>大致成本</td><td><strong>约 160 欧元</strong></td><td><strong>约 300 欧元</strong></td></tr>
+</tbody></table></div>
+<p>话说回来，我们也要诚实地承认 Pager 有些地方做得更好、而且便宜方案很难匹敌：<strong>集成的 Bluetooth/BLE</strong>（无需额外网卡）、<strong>6 GHz</strong>，以及<strong>多台 Pager 即插即用组成的蜂群</strong>。如果你的工作离不开 BLE，Pager 自有它的用武之地。至于其它一切，Pi 在灵活性和价格上都胜出。</p>
+
+<h2>你需要准备什么（硬件）</h2>
+<ul>
+<li><strong>Raspberry Pi 4（4 GB）</strong>或 <strong>Pi 5（8 GB，理想选择）</strong>——大脑。同一个镜像两者通用。</li>
+<li><strong>支持 monitor mode + injection 的 USB WiFi 网卡</strong>——关键部件。推荐 <strong>Alfa AWUS036ACH</strong>（RTL8812AU）；低功耗、无需 hub 可直连的替代品：<strong>AWUS036NHA / AR9271</strong>（驱动已内置在内核里）。避开 <strong>WN722N v2/v3</strong>（不打补丁无法 injection）。</li>
+<li><strong>带外接供电的 USB hub</strong>——搭配 AWUS036ACH 时必备（见下方提示）。</li>
+<li><strong>USB microSD 读卡器</strong>——用于从没有 SD 卡槽的笔记本上刷写。</li>
+<li><strong>USB-C PD 移动电源</strong>——让它像 Pager 一样便携。Pi 4 需要 5 V/3 A，Pi 5 需要 <strong>5 V/5 A</strong>。</li>
+<li><strong>microSD</strong>，至少 32 GB（A1/A2 级别）；用于存工具、字典和抓包，64 GB 更好。</li>
+<li>可选：3.5"/5" 触摸屏，以及带风扇的外壳（Pi 5 会很受用）。</li>
+</ul>
+<div class="im-callout"><div class="im-callout-title"><span class="im-badge">重要</span><span>会损坏 microSD 的 brownout</span></div><p>把 Alfa AWUS036ACH <strong>直连到 Pi</strong> 上做 injection 时会让它变得不稳定（SSH 断连、延迟飙升），甚至可能直接把 Pi 拖垮。如果这发生在正在写入的时候，突然掉电会<strong>悄无声息地损坏 microSD</strong>。这是吃过亏才学到的。解决办法：<strong>用带外接供电的 USB hub 给 Alfa 供电</strong>，或者改用低功耗网卡（AR9271）。在 Pi 5 上，如果只用 5 V/3 A 的电源，固件会把 USB 口限流到 600 mA，让问题雪上加霜；用 <code>vcgencmd get_throttled</code> 检查状态（任何 ≠ <code>0x0</code> 的值都表示 undervoltage）。</p></div>
+
+<h2>军火库</h2>
+<p>这就是用来复刻 Pineapple 的部分。用第 3 步的脚本一条命令就能全部装好，不过先让你看看我们说的是些什么：</p>
+<ul>
+<li><strong>hostapd + dnsmasq</strong> → Evil Twin / Rogue AP（这就是 PineAP）。</li>
+<li><strong>aircrack-ng</strong> → 抓取并破解 handshake。</li>
+<li><strong>wifite</strong> → 自动化的 WPA/WPS 攻击。</li>
+<li><strong>bettercap</strong> → MITM、侦察与 caplets（强制门户）。</li>
+<li><strong>kismet</strong> → 网络与客户端的探测器/嗅探器。</li>
+<li><strong>hcxdumptool</strong> → 无需客户端即可抓取 PMKID。</li>
+<li><strong>mdk4</strong> → deauth、beacon flood、压力测试。</li>
+<li><strong>reaver / bully</strong> → WPS 攻击。</li>
+</ul>
+<p>而这里正是 Pi 领先的地方，都是 Pager <strong>不带</strong>的东西：<strong>eaphammer</strong>（WPA-Enterprise 的 Evil Twin）、<strong>airgeddon</strong>（一体化套件）、<strong>wifiphisher</strong>（强制门户/钓鱼）、带图形桌面的 <strong>Wireshark</strong>，以及用来本地破解、不必依赖云端的 <strong>rockyou</strong> 字典。</p>
+<div class="im-callout"><div class="im-callout-title"><span class="im-badge">提示</span><span>Kali ARM 并没有全都带上</span></div><p>就算你用 Kali，也不会自带完整的军火库：在实际测试中缺了 <strong>hostapd、mdk4、hcxdumptool 和 bettercap</strong>。脚本里的 <code>wifi-tools</code> 模块会把它们补齐，直到 12 个二进制全部就绪。</p></div>
+
+<h2>第 1 步 · 准备并刷写 Pi</h2>
+<p>第一个脚本把所有脏活累活都干了：下载镜像（默认 Kali ARM），校验 SHA-256，解压，<strong>预置自动联网</strong>（让 Pi 自己连上你的 WiFi 并用密钥做 SSH），自动识别 microSD 并在双重确认下写入。它甚至会<strong>自动识别你的 WiFi 并从笔记本上取回密码</strong>，所以大多数字段你直接按 Enter 就行。</p>
+<pre><code>chmod +x 1-instalar.sh
+./1-instalar.sh</code></pre>
+<p>脚本在需要时（挂载镜像和写盘）会内部提升到 <code>sudo</code>。执行 <code>dd</code> 之前会要求两次确认：先键入列表里磁盘对应的<strong>编号</strong>，然后用大写输入 <code>CONFIRMAR</code>。结束时会<strong>重新读取卡片并比对 SHA-256</strong>：如果不一致就中止并提示 microSD 已损坏（这能在你白白浪费一小时之前，抓出被 brownout 弄坏的卡）。</p>
+<div class="im-callout"><div class="im-callout-title"><span class="im-badge">下载</span><span>第 1 步的脚本</span></div><p><a href="/downloads/1-instalar.sh" download><code>1-instalar.sh</code></a> —— 一体化安装器（下载 + 校验 + 预置 + 写盘）。约 625 行 bash，没有奇怪的依赖。</p></div>
+
+<h2>第 2 步 · 在你的网络里揪出这台 Pi</h2>
+<p>Pi 开机后自己连上你的 WiFi，并通过 mDNS 广播自己。第二个脚本在你不知道它 IP 的情况下，从笔记本上把它揪出来：</p>
+<pre><code>./2-cazar.sh                 # 找到 Pi 并打开 SSH 会话
+./2-cazar.sh --run remote    # 找到并直接运行某个模块</code></pre>
+<p>它先尝试 <strong>mDNS 约 1 分钟</strong>；如果你的路由器过滤了客户端之间的 multicast（很常见），就退而做<strong>全网段扫描</strong>，优先匹配 Raspberry Pi 的 MAC（arp-scan/nmap）并测试 SSH 密钥。你的笔记本上需要装 <code>avahi-utils</code> 并启动其守护进程：</p>
+<pre><code>sudo apt install -y avahi-utils
+sudo systemctl start avahi-daemon</code></pre>
+<div class="im-callout"><div class="im-callout-title"><span class="im-badge">下载</span><span>第 2 步的脚本</span></div><p><a href="/downloads/2-cazar.sh" download><code>2-cazar.sh</code></a> —— 定位 Pi（mDNS + 扫描），通过 <code>scp</code> 拷贝军火库并打开 SSH。</p></div>
+
+<h2>第 3 步 · 搭建军火库</h2>
+<p>在 Pi 上开好会话后，第三个脚本按模块安装并配置一切。它始终用 <code>sudo</code> 运行：</p>
+<pre><code>sudo ./pineapple-killer.sh            # 交互式菜单
+sudo ./pineapple-killer.sh all        # 依次运行所有模块
+sudo ./pineapple-killer.sh wifi-tools # 只运行一个模块</code></pre>
+<div class="im-card"><table class="im-table"><thead><tr><th>模块</th><th>作用</th></tr></thead><tbody>
+<tr><td><code>info</code></td><td>识别 Pi 型号、RAM、内核和 USB 网卡；对供电/brownout 发出提醒。</td></tr>
+<tr><td><code>update</code></td><td>更新系统并安装基础工具。</td></tr>
+<tr><td><code>wifi-tools</code></td><td>安装用来替代 Pineapple 的军火库。</td></tr>
+<tr><td><code>extra-tools</code></td><td>克隆 eaphammer、airgeddon 和 wifiphisher（Pager 没有的东西）。</td></tr>
+<tr><td><code>ssh</code></td><td>安装并启用 SSH。</td></tr>
+<tr><td><code>vnc</code></td><td>启用远程桌面（RealVNC/TigerVNC）。</td></tr>
+<tr><td><code>remote</code></td><td>Tailscale + 加固过的 SSH + watchdog（20 公里外控制）。</td></tr>
+<tr><td><code>monitor</code></td><td>把第 2 块网卡切到 monitor mode 而不拖垮 uplink。</td></tr>
+<tr><td><code>rogue-ap</code></td><td>生成 Evil Twin 的模板（= PineAP）。</td></tr>
+<tr><td><code>verify</code></td><td>检查 12 个二进制并打印 Pi 对 Pager 的对比表。</td></tr>
+</tbody></table></div>
+
+<h2>第 4 步 · 20 公里外远程控制（可选）</h2>
+<p>这里 Pi 做到了一件 Pager 只有靠额外 payload 才能实现的事：即便它躲在 CGNAT 后面，也能从任何地方控制它，而且不用开放端口。<code>remote</code> 模块装好 Tailscale（WireGuard），加固 SSH，并留一个防锁死的 watchdog，免得你把自己关在门外：</p>
+<pre><code>sudo ./pineapple-killer.sh remote
+# 无人值守，使用 Tailscale 密钥：
+TS_AUTHKEY=tskey-auth-xxxx sudo -E ./pineapple-killer.sh remote</code></pre>
+<p>从手机上（走移动数据）：<code>ssh kali@pi-pineapple</code>，VNC 在 <code>pi-pineapple:5901</code>，或门户在 <code>http://pi-pineapple:&lt;puerto&gt;</code>。</p>
+
+<h2>快速演示</h2>
+<p><strong>侦察</strong>（与 Pager 打平）：</p>
+<pre><code>sudo airmon-ng start wlan1
+sudo airodump-ng wlan1mon</code></pre>
+<p><strong>Evil Twin / Rogue AP</strong>（= PineAP）：<code>rogue-ap</code> 模块会留下一个现成的 <code>start-ap.sh</code>。把 "FreeWiFi_Lab" 这个网络拉起来：</p>
+<pre><code>cd /opt/wifi-tools/rogue-ap
+sudo ./start-ap.sh</code></pre>
+<p><strong>本地破解</strong>（这里 Pi 胜出，不依赖云端）：</p>
+<pre><code>sudo gunzip -k /usr/share/wordlists/rockyou.txt.gz
+aircrack-ng -w /usr/share/wordlists/rockyou.txt captura-01.cap</code></pre>
+
+<h2>如果出了问题</h2>
+<ul>
+<li><strong>Pi 没出现：</strong>八成是路由器在客户端之间过滤了 mDNS。在你的实验网络里关掉 "AP client isolation"，或者让 <code>2-cazar.sh</code> 去做全网段扫描。</li>
+<li><strong>Kali 在首次开机时会改掉 hostname 和密码</strong>，而且默认关闭 SSH。第 1 步的预置已经把这些搞定了（它们会在 <em>firstboot</em> 时应用）。</li>
+<li><strong>没有国家码就没有 5 GHz：</strong>芯片启动时处于全球域 <code>00</code>，会屏蔽掉大部分 5 GHz。启动参数里预置了 <code>cfg80211.ieee80211_regdom=ES</code>。</li>
+<li><strong>Pi 的内置 WiFi 不能用</strong>于 monitor mode/injection：所以那块 USB 网卡是必不可少的。</li>
+<li><strong><code>dd</code> 的黄金法则：</strong>永远指向整块磁盘（<code>/dev/sdb</code>），绝不要指向某个分区（<code>/dev/sdb1</code>）。脚本会保护你的系统盘，并要求双重确认。</li>
+</ul>
+
+<h2>有用的链接</h2>
+<ul>
+<li>Kali ARM（Raspberry Pi 2/3/4/5 64-bit 镜像）：<a href="https://www.kali.org/get-kali/#kali-arm">kali.org/get-kali</a></li>
+<li>Raspberry Pi Imager：<a href="https://www.raspberrypi.com/software/">raspberrypi.com/software</a></li>
+<li>eaphammer：<a href="https://github.com/s0lst1c3/eaphammer">github.com/s0lst1c3/eaphammer</a></li>
+<li>airgeddon：<a href="https://github.com/v1s1t0r1sh3r3/airgeddon">github.com/v1s1t0r1sh3r3/airgeddon</a></li>
+<li>wifiphisher：<a href="https://github.com/wifiphisher/wifiphisher">github.com/wifiphisher/wifiphisher</a></li>
+<li>Tailscale：<a href="https://tailscale.com/">tailscale.com</a></li>
+</ul>
+
+<hr>
+<p><em>这是我这个系列的一部分——用一台 Raspberry Pi 搭建你自己的 "Pineapple"。完整组装过程的视频正在路上，会发布在我的 <a href="https://www.youtube.com/@imcaletrio">YouTube 频道</a>。</em></p></div> </div> </article>  </main> <footer class="mt-auto"> <div class="im-footer-inner w-full px-5 md:px-8 py-6 text-sm text-[rgb(var(--muted))]"> <div class="im-footer-row"> <div class="im-footer-brand">© 2026 imcaletrio</div> </div> </div> </footer> <script type="module">try{sessionStorage.getItem("imcaletrio_loader_shown")==="1"?document.documentElement.dataset.loader="skip":(document.documentElement.dataset.loader="run",window.setTimeout(()=>{document.documentElement.dataset.loader="skip";const e=document.getElementById("im-loader");e&&e.setAttribute("aria-hidden","true")},8e3))}catch{}</script> </body> </html>

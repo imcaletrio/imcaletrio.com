@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="ru" data-astro-transition-scope="astro-mo47iqwu-1"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><meta name="theme-color" content="#0b0b0b" media="(prefers-color-scheme: dark)"><meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"><title>Ваша Raspberry Pi заменит WiFi Pineapple | imcaletrio</title><meta name="description" content="Полное руководство по сборке Raspberry Pi с тем же беспроводным арсеналом, что и у WiFi Pineapple Pager, за треть цены: железо, команды и скрипты."><meta name="robots" content="index,follow"><meta name="author" content="imcaletrio"><link rel="icon" href="/favicon.svg"><link rel="canonical" href="https://imcaletrio.com/ru/blog/raspberry-pi-wifi-pineapple.mdx/"><link rel="alternate" href="https://imcaletrio.com/es/blog/raspberry-pi-wifi-pineapple.mdx/" hreflang="es"><link rel="alternate" href="https://imcaletrio.com/en/blog/raspberry-pi-wifi-pineapple.mdx/" hreflang="en"><link rel="alternate" href="https://imcaletrio.com/zh/blog/raspberry-pi-wifi-pineapple.mdx/" hreflang="zh"><link rel="alternate" href="https://imcaletrio.com/ru/blog/raspberry-pi-wifi-pineapple.mdx/" hreflang="ru"><link rel="alternate" href="https://imcaletrio.com/en/blog/raspberry-pi-wifi-pineapple.mdx/" hreflang="x-default"><meta property="og:site_name" content="imcaletrio"><meta property="og:type" content="article"><meta property="og:title" content="Ваша Raspberry Pi заменит WiFi Pineapple | imcaletrio"><meta property="og:description" content="Полное руководство по сборке Raspberry Pi с тем же беспроводным арсеналом, что и у WiFi Pineapple Pager, за треть цены: железо, команды и скрипты."><meta property="og:url" content="https://imcaletrio.com/ru/blog/raspberry-pi-wifi-pineapple.mdx/"><meta property="og:image" content="https://imcaletrio.com/images/raspberry-pi-wifi-pineapple-ru.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Ваша Raspberry Pi заменит WiFi Pineapple | imcaletrio"><meta name="twitter:description" content="Полное руководство по сборке Raspberry Pi с тем же беспроводным арсеналом, что и у WiFi Pineapple Pager, за треть цены: железо, команды и скрипты."><meta name="twitter:image" content="https://imcaletrio.com/images/raspberry-pi-wifi-pineapple-ru.jpg"><link rel="me" href="https://www.youtube.com/@imcaletrio"><link rel="me" href="https://www.tiktok.com/@imcaletrio"><link rel="me" href="https://www.instagram.com/imcaletrio/"><link rel="me" href="https://x.com/imcaletrio"><script type="application/ld+json">[{"@context":"https://schema.org","@type":"Organization","name":"imcaletrio","url":"https://imcaletrio.com/","logo":"https://imcaletrio.com/brand/logo-mark.svg","sameAs":["https://www.youtube.com/@imcaletrio","https://www.tiktok.com/@imcaletrio","https://www.instagram.com/imcaletrio/","https://x.com/imcaletrio"]},{"@context":"https://schema.org","@type":"WebSite","name":"imcaletrio","url":"https://imcaletrio.com/","inLanguage":"ru"},{"@context":"https://schema.org","@type":"BlogPosting","headline":"Ваша Raspberry Pi заменит WiFi Pineapple","description":"Полное руководство по сборке Raspberry Pi с тем же беспроводным арсеналом, что и у WiFi Pineapple Pager, за треть цены: железо, команды и скрипты.","datePublished":"2026-07-26","dateModified":"2026-07-26","mainEntityOfPage":"https://imcaletrio.com/ru/blog/raspberry-pi-wifi-pineapple.mdx/","inLanguage":"ru","image":"https://imcaletrio.com/images/raspberry-pi-wifi-pineapple-ru.jpg","author":{"@type":"Person","name":"imcaletrio"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://imcaletrio.com/ru/"},{"@type":"ListItem","position":2,"name":"Блог","item":"https://imcaletrio.com/ru/blog/"},{"@type":"ListItem","position":3,"name":"Ваша Raspberry Pi заменит WiFi Pineapple"}]}]</script><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.QW52Ox2j.js"></script><script>
+      try{
+        const saved=localStorage.getItem("im_theme");
+        if(saved==="light"){document.documentElement.dataset.theme="light"}
+        if(saved==="dark" || !saved){document.documentElement.dataset.theme="dark"}
+      }catch{
+        document.documentElement.dataset.theme="dark"
+      }
+    </script><script type="module" src="/_astro/BaseLayout.astro_astro_type_script_index_0_lang.BU9dOO7o.js"></script><link rel="stylesheet" href="/_astro/_slug_.CCtNLKz7.css"><style>[data-astro-transition-scope="astro-mo47iqwu-1"] { view-transition-name: root; }@layer astro { ::view-transition-old(root) {
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }::view-transition-new(root) {
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back]::view-transition-old(root) {
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back]::view-transition-new(root) {
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; } }[data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-mo47iqwu-1"],
+			[data-astro-transition-fallback="old"][data-astro-transition-scope="astro-mo47iqwu-1"] {
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-mo47iqwu-1"],
+			[data-astro-transition-fallback="new"][data-astro-transition-scope="astro-mo47iqwu-1"] {
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }[data-astro-transition=back][data-astro-transition-fallback="old"] [data-astro-transition-scope="astro-mo47iqwu-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="old"][data-astro-transition-scope="astro-mo47iqwu-1"] {
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeOut; }[data-astro-transition=back][data-astro-transition-fallback="new"] [data-astro-transition-scope="astro-mo47iqwu-1"],
+			[data-astro-transition=back][data-astro-transition-fallback="new"][data-astro-transition-scope="astro-mo47iqwu-1"] {
+	animation-duration: 180ms;
+	animation-timing-function: cubic-bezier(0.76, 0, 0.24, 1);
+	animation-fill-mode: both;
+	animation-name: astroFadeIn; }</style></head> <body class> <div id="im-loader" class="fixed inset-0 z-[100] pointer-events-none"> <div data-loader-stage class="absolute inset-0 opacity-0"> <canvas id="im-loader-canvas" class="absolute inset-0 w-full h-full"></canvas> <div class="absolute inset-0 grid place-items-center"> <img id="im-loader-animated-logo" src="/brand/logo-animado.svg" alt="imcaletrio" class="im-loader-logo select-none" draggable="false" style="opacity:0"> </div> </div> </div>  <div id="im-tfx" class="fixed inset-0 z-[90] pointer-events-none opacity-0" aria-hidden="true"> <canvas id="im-tfx-canvas" class="absolute inset-0 w-full h-full"></canvas> </div> <script type="module" src="/_astro/TransitionFX.astro_astro_type_script_index_0_lang.DZVm35nh.js"></script> <header class="sticky top-0 z-40 w-full backdrop-blur supports-[backdrop-filter]:bg-[rgba(var(--bg),0.75)]" data-header> <div class="im-header-inner w-full px-5 md:px-8 py-3 grid grid-cols-[1fr_auto_1fr] items-center"> <a href="/ru/" class="im-brand im-brand-link justify-self-start" aria-label="imcaletrio" title="imcaletrio"> <span class="im-brandmark" aria-hidden="true"></span> </a> <nav data-im-nav class="im-nav justify-self-center" aria-label="Main"> <span class="im-nav-indicator" aria-hidden="true"></span> <a class="im-navitem" href="/ru/"> <span class="im-navtext">Главная</span> </a> <a class="im-navitem" href="/ru/blog/" data-active="1"> <span class="im-navtext">Блог</span> </a> <a class="im-navitem" href="/ru/rrss/"> <span class="im-navtext">Соцсети</span> </a> </nav> <div class="justify-self-end flex items-center gap-2 sm:gap-3"> <div class="relative"> <details class="relative" data-locale-menu> <summary class="im-locale-summary" data-lang-trigger aria-label="Idioma" title="Idioma"> <img src="/flags/ru.png" alt="RU" width="18" height="18" class="im-locale-flag" loading="lazy"> </summary> <div class="im-locale-panel"> <div class="im-locale-row"> <span class="im-locale-indicator" aria-hidden="true"></span> <a href="/es/blog/raspberry-pi-wifi-pineapple.mdx/" class="im-locale-item" aria-label="es" title="ES"> <img src="/flags/es.png" alt="ES" width="18" height="18" class="im-locale-flag" loading="lazy"> </a><a href="/en/blog/raspberry-pi-wifi-pineapple.mdx/" class="im-locale-item" aria-label="en" title="EN"> <img src="/flags/en.png" alt="EN" width="18" height="18" class="im-locale-flag" loading="lazy"> </a><a href="/zh/blog/raspberry-pi-wifi-pineapple.mdx/" class="im-locale-item" aria-label="zh" title="ZH"> <img src="/flags/zh.png" alt="ZH" width="18" height="18" class="im-locale-flag" loading="lazy"> </a><a href="/ru/blog/raspberry-pi-wifi-pineapple.mdx/" class="im-locale-item" data-active="1" aria-label="ru" title="RU"> <img src="/flags/ru.png" alt="RU" width="18" height="18" class="im-locale-flag" loading="lazy"> </a> </div> </div> </details> </div> <button data-theme-toggle aria-label="Тема" class="im-theme-btn rounded-xl w-10 h-9 grid place-items-center relative overflow-hidden"> <svg class="im-theme-ico im-theme-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"> <path d="M21 14.2A7.6 7.6 0 0 1 9.8 3 9 9 0 1 0 21 14.2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg> <svg class="im-theme-ico im-theme-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"> <circle cx="12" cy="12" r="5.2" fill="currentColor"></circle> <path d="M12 2.2v2.2M12 19.6v2.2M4.6 4.6l1.55 1.55M17.85 17.85l1.55 1.55M2.2 12h2.2M19.6 12h2.2M4.6 19.4l1.55-1.55M17.85 6.15l1.55-1.55" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path> </svg> </button> </div> </div> </header> <main class="container pt-10 vt-main">  <article class="w-full"> <a href="/ru/blog/" class="inline-flex items-center justify-center w-9 h-9 rounded-full text-[rgb(var(--muted))] hover:text-[rgb(var(--accent))] hover:bg-[rgba(255,255,255,0.04)] transition" aria-label="Назад" title="Назад"> <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" class="w-4 h-4"> <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </svg> <span class="sr-only">Назад</span> </a> <h1 class="text-4xl sm:text-5xl font-semibold tracking-tight mt-4 text-white hover:text-[rgb(var(--accent))] transition-colors duration-200" data-animate="in">Ваша Raspberry Pi заменит WiFi Pineapple</h1> <p class="text-[rgb(var(--muted))] mt-3" data-animate="in">Полное руководство по сборке Raspberry Pi с тем же беспроводным арсеналом, что и у WiFi Pineapple Pager, за треть цены: железо, команды и скрипты.</p> <div class="flex flex-wrap items-center gap-3 text-sm text-[rgb(var(--muted))] mt-4" data-animate="in"> <time datetime="2026-07-26">2026-07-26</time> </div> <div class="prose mt-10" data-animate="in">  <div class="im-post"><div class="im-callout"><div class="im-callout-title"><span class="im-badge">Внимание</span><span>Только в своей сети или с письменного разрешения</span></div><p>Используй это только в <strong>своей собственной сети</strong>, <strong>изолированной лаборатории</strong> или в рамках <strong>пентеста с письменным разрешением</strong>.</p></div>
+
+<h2>Часть вторая: от обзора к сборке</h2>
+<p>В <a href="/ru/blog/wifi-pineapple-pager.mdx/">обзоре WiFi Pineapple Pager</a> мы пришли к неудобному для устройства за ~300 € выводу: почти всё, что он делает —recon, Evil Twin, захват handshake, captive portal— это просто софт, работающий на Linux. Поэтому во второй части мы оставляем теорию и <strong>собираем всё сами</strong>: Raspberry Pi, которая делает то же самое —а по ряду направлений и больше— за треть цены.</p>
+
+<h3>Что мы будем делать и зачем</h3>
+<p><strong>Что:</strong> превратить Raspberry Pi + WiFi-адаптер с инъекцией + power bank в портативное устройство, эквивалентное Pager'у, с тем же беспроводным арсеналом.</p>
+<p><strong>Зачем:</strong> потому что под капотом это Linux и он гоняет ровно те же инструменты (aircrack-ng, bettercap, hostapd, hcxdumptool…). По сути, почти все серьёзные payload'ы Pager'а — это bash или python: копируешь и запускаешь на Pi точно так же. И потому что, имея полный контроль над системой, ты можешь расширять её без ограничений и взламывать пароли локально, не завися от облака.</p>
+
+<h2>Напоминание: Pi против Pineapple Pager</h2>
+<p>В обзоре мы разобрали это возможность за возможностью; вот краткая сводка перед стартом:</p>
+
+<div class="im-card"><table class="im-table"><thead><tr><th>Возможность</th><th>Raspberry Pi</th><th>Pineapple Pager</th></tr></thead><tbody>
+<tr><td>Захват handshake</td><td>✓ aircrack-ng</td><td>✓</td></tr>
+<tr><td>Evil Twin / Rogue AP</td><td>✓ hostapd + dnsmasq</td><td>✓ PineAP</td></tr>
+<tr><td>WPA-Enterprise (evil twin)</td><td>✓ eaphammer</td><td>Ограниченно</td></tr>
+<tr><td>MITM / sniffing</td><td>✓ bettercap</td><td>Базово</td></tr>
+<tr><td>Captive portal / фишинг</td><td>✓ wifiphisher, caplets</td><td>✓ модули</td></tr>
+<tr><td>Локальный взлом паролей</td><td>✓ локальный CPU/GPU</td><td>✗ зависит от облака</td></tr>
+<tr><td>Графический рабочий стол + VNC</td><td>✓ Wireshark, браузер</td><td>✗ только web UI</td></tr>
+<tr><td>Удалённое управление за 20 км (CGNAT)</td><td>✓ нативный Tailscale</td><td>Отдельный payload</td></tr>
+<tr><td>Расширяется любым инструментом</td><td>✓ это полноценный Linux</td><td>Закрытая экосистема</td></tr>
+<tr><td>Примерная стоимость</td><td><strong>~160 €</strong></td><td><strong>~300 €</strong></td></tr>
+</tbody></table></div>
+<p>При этом будем честны насчёт того, что Pager делает лучше и что дёшево повторить сложно: <strong>встроенный Bluetooth/BLE</strong> (без адаптеров), <strong>6 ГГц</strong> и <strong>рой из нескольких Pager'ов</strong> в режиме plug-and-play. Если ваша работа завязана на BLE, у Pager'а есть своя ниша. Во всём остальном Pi выигрывает по гибкости и цене.</p>
+
+<h2>Что понадобится (железо)</h2>
+<ul>
+<li><strong>Raspberry Pi 4 (4 ГБ)</strong> или <strong>Pi 5 (8 ГБ, идеально)</strong> — это мозг. Один и тот же образ подходит для обеих.</li>
+<li><strong>USB WiFi-адаптер с monitor mode + инъекцией</strong> — ключевая деталь. Рекомендую <strong>Alfa AWUS036ACH</strong> (RTL8812AU); низкопотребляющая альтернатива, которая работает напрямую без хаба: <strong>AWUS036NHA / AR9271</strong> (драйвер уже в ядре). Избегайте <strong>WN722N v2/v3</strong> (без патчей не инъектит).</li>
+<li><strong>USB-хаб с внешним питанием</strong> — обязателен с AWUS036ACH (см. предупреждение ниже).</li>
+<li><strong>USB-картридер для microSD</strong> — чтобы прошить с ноутбука без слота SD.</li>
+<li><strong>Power bank USB-C PD</strong> — делает её портативной как Pager. 5 В/3 А для Pi 4, <strong>5 В/5 А</strong> для Pi 5.</li>
+<li><strong>microSD</strong> минимум 32 ГБ (класс A1/A2); лучше 64 ГБ под инструменты, словари и захваты.</li>
+<li>Опционально: сенсорный дисплей 3.5"/5" и корпус с вентилятором (Pi 5 будет благодарна).</li>
+</ul>
+<div class="im-callout"><div class="im-callout-title"><span class="im-badge">Важно</span><span>Brownout, который убивает microSD</span></div><p>Подключение Alfa AWUS036ACH <strong>напрямую к Pi</strong> при инъекции делает её нестабильной (обрывы SSH, взлетающая латентность) и может вообще её положить. Если это случится во время записи, потеря питания <strong>тихо повреждает microSD</strong>. Проверено на своей шкуре. Решение: <strong>питайте Alfa через USB-хаб с внешним питанием</strong> или используйте низкопотребляющий адаптер (AR9271). На Pi 5 с блоком питания всего 5 В/3 А прошивка режет USB-порты до 600 мА и усугубляет проблему; проверьте состояние командой <code>vcgencmd get_throttled</code> (любое значение ≠ <code>0x0</code> — это undervoltage).</p></div>
+
+<h2>Арсенал</h2>
+<p>Вот что заменяет Pineapple. Всё ставится одной командой скриптом из шага 3, но чтобы вы понимали, о чём речь:</p>
+<ul>
+<li><strong>hostapd + dnsmasq</strong> → Evil Twin / Rogue AP (это и есть PineAP).</li>
+<li><strong>aircrack-ng</strong> → захват и взлом handshake.</li>
+<li><strong>wifite</strong> → автоматизированные атаки WPA/WPS.</li>
+<li><strong>bettercap</strong> → MITM, recon и caplets (captive portal).</li>
+<li><strong>kismet</strong> → детектор/сниффер сетей и клиентов.</li>
+<li><strong>hcxdumptool</strong> → захват PMKID без клиентов.</li>
+<li><strong>mdk4</strong> → deauth, beacon flood, стресс-тест.</li>
+<li><strong>reaver / bully</strong> → атака на WPS.</li>
+</ul>
+<p>И вот тут Pi вырывается вперёд — тем, чего у Pager'а <strong>нет</strong>: <strong>eaphammer</strong> (Evil Twin для WPA-Enterprise), <strong>airgeddon</strong> (комбайн всё-в-одном), <strong>wifiphisher</strong> (captive portal/фишинг), <strong>Wireshark</strong> с графическим рабочим столом и словарь <strong>rockyou</strong>, чтобы взламывать локально без зависимости от облака.</p>
+<div class="im-callout"><div class="im-callout-title"><span class="im-badge">Учтите</span><span>В Kali ARM есть не всё</span></div><p>Даже если вы на Kali, полный арсенал не идёт в комплекте: в реальных тестах не хватало <strong>hostapd, mdk4, hcxdumptool и bettercap</strong>. Блок <code>wifi-tools</code> в скрипте доустанавливает их и доводит набор до готовых 12 бинарников.</p></div>
+
+<h2>Шаг 1 · Подготовить и прошить Pi</h2>
+<p>Первый скрипт делает всю грязную работу: скачивает образ (по умолчанию Kali ARM), проверяет SHA-256, распаковывает, <strong>запекает автоподключение</strong> (чтобы Pi сама подключилась к вашему WiFi с SSH по ключу), автоматически находит microSD и записывает её с двойным подтверждением. Он даже <strong>сам определяет ваш WiFi и достаёт пароль</strong> с ноутбука, так что в большинстве полей вы просто жмёте Enter.</p>
+<pre><code>chmod +x 1-instalar.sh
+./1-instalar.sh</code></pre>
+<p>Скрипт сам поднимается до <code>sudo</code>, когда это нужно (монтирование образа и запись). Перед <code>dd</code> он просит два подтверждения: ввести <strong>номер</strong> диска из списка, а затем набрать <code>CONFIRMAR</code> заглавными. По завершении он <strong>перечитывает карту и сравнивает SHA-256</strong> с образом: если не совпадает — прерывается с предупреждением, что microSD повреждена (это ловит убитую brownout'ом карту раньше, чем вы потеряете час).</p>
+<div class="im-callout"><div class="im-callout-title"><span class="im-badge">Скачать</span><span>Скрипт шага 1</span></div><p><a href="/downloads/1-instalar.sh" download><code>1-instalar.sh</code></a> — установщик всё-в-одном (скачивает + проверяет + запекает + записывает). ~625 строк bash, без экзотических зависимостей.</p></div>
+
+<h2>Шаг 2 · Отловить Pi в своей сети</h2>
+<p>Pi загружается, сама подключается к вашему WiFi и объявляет о себе по mDNS. Второй скрипт ловит её с ноутбука, даже если вы не знаете её IP:</p>
+<pre><code>./2-cazar.sh                 # найти Pi и открыть SSH-сессию
+./2-cazar.sh --run remote    # найти и сразу запустить блок</code></pre>
+<p>Сначала он пробует <strong>mDNS в течение ~1 минуты</strong>; если ваш роутер фильтрует мультикаст между клиентами (очень частое дело), он переходит к <strong>сканированию сети</strong>, отдавая приоритет MAC-адресам Raspberry Pi (arp-scan/nmap) и проверяя SSH-ключ. На ноутбуке нужны <code>avahi-utils</code> и запущенный демон:</p>
+<pre><code>sudo apt install -y avahi-utils
+sudo systemctl start avahi-daemon</code></pre>
+<div class="im-callout"><div class="im-callout-title"><span class="im-badge">Скачать</span><span>Скрипт шага 2</span></div><p><a href="/downloads/2-cazar.sh" download><code>2-cazar.sh</code></a> — находит Pi (mDNS + сканирование), копирует арсенал через <code>scp</code> и открывает SSH.</p></div>
+
+<h2>Шаг 3 · Собрать арсенал</h2>
+<p>Уже в сессии на Pi третий скрипт ставит и настраивает всё по блокам. Запускается всегда с <code>sudo</code>:</p>
+<pre><code>sudo ./pineapple-killer.sh            # интерактивное меню
+sudo ./pineapple-killer.sh all        # все блоки подряд
+sudo ./pineapple-killer.sh wifi-tools # только один блок</code></pre>
+<div class="im-card"><table class="im-table"><thead><tr><th>Блок</th><th>Что делает</th></tr></thead><tbody>
+<tr><td><code>info</code></td><td>Определяет модель Pi, RAM, ядро и USB-адаптер; предупреждает о питании/brownout.</td></tr>
+<tr><td><code>update</code></td><td>Обновляет систему и ставит базовые утилиты.</td></tr>
+<tr><td><code>wifi-tools</code></td><td>Ставит арсенал, заменяющий Pineapple.</td></tr>
+<tr><td><code>extra-tools</code></td><td>Клонирует eaphammer, airgeddon и wifiphisher (то, чего нет у Pager'а).</td></tr>
+<tr><td><code>ssh</code></td><td>Ставит и включает SSH.</td></tr>
+<tr><td><code>vnc</code></td><td>Активирует удалённый рабочий стол (RealVNC/TigerVNC).</td></tr>
+<tr><td><code>remote</code></td><td>Tailscale + усиленный SSH + watchdog (управление за 20 км).</td></tr>
+<tr><td><code>monitor</code></td><td>Переводит 2-й адаптер в monitor mode, не роняя uplink.</td></tr>
+<tr><td><code>rogue-ap</code></td><td>Генерирует шаблоны Evil Twin (= PineAP).</td></tr>
+<tr><td><code>verify</code></td><td>Проверяет 12 бинарников и печатает сравнение Pi против Pager.</td></tr>
+</tbody></table></div>
+
+<h2>Шаг 4 · Удалённое управление за 20 км (опционально)</h2>
+<p>Здесь Pi делает то, что Pager вытягивает только с отдельным payload'ом: управление откуда угодно, даже если она за CGNAT, без открытия портов. Блок <code>remote</code> поднимает Tailscale (WireGuard), усиливает SSH и оставляет watchdog против lockout'а, чтобы вы не остались за бортом:</p>
+<pre><code>sudo ./pineapple-killer.sh remote
+# автоматически, с ключом Tailscale:
+TS_AUTHKEY=tskey-auth-xxxx sudo -E ./pineapple-killer.sh remote</code></pre>
+<p>С телефона (по мобильным данным): <code>ssh kali@pi-pineapple</code>, VNC на <code>pi-pineapple:5901</code> или портал на <code>http://pi-pineapple:&lt;puerto&gt;</code>.</p>
+
+<h2>Быстрые демо</h2>
+<p><strong>Recon</strong> (ничья с Pager'ом):</p>
+<pre><code>sudo airmon-ng start wlan1
+sudo airodump-ng wlan1mon</code></pre>
+<p><strong>Evil Twin / Rogue AP</strong> (= PineAP): блок <code>rogue-ap</code> оставляет готовый <code>start-ap.sh</code>. Поднимаем сеть "FreeWiFi_Lab":</p>
+<pre><code>cd /opt/wifi-tools/rogue-ap
+sudo ./start-ap.sh</code></pre>
+<p><strong>Локальный взлом</strong> (вот тут выигрывает Pi, без зависимости от облака):</p>
+<pre><code>sudo gunzip -k /usr/share/wordlists/rockyou.txt.gz
+aircrack-ng -w /usr/share/wordlists/rockyou.txt captura-01.cap</code></pre>
+
+<h2>Если что-то не работает</h2>
+<ul>
+<li><strong>Pi не появляется:</strong> почти всегда это роутер, фильтрующий mDNS между клиентами. Отключите "AP client isolation" в своей лабораторной сети или дайте <code>2-cazar.sh</code> сделать сканирование.</li>
+<li><strong>Kali меняет hostname и пароль</strong> при первой загрузке и идёт с выключенным SSH. Запекание из шага 1 это уже решает (применяет их на <em>firstboot</em>).</li>
+<li><strong>Без страны нет 5 ГГц:</strong> чип стартует в мировом домене <code>00</code> и блокирует значительную часть 5 ГГц. При загрузке запекается <code>cfg80211.ieee80211_regdom=ES</code>.</li>
+<li><strong>Встроенный WiFi у Pi не годится</strong> для monitor mode/инъекции: поэтому USB-адаптер обязателен.</li>
+<li><strong>Золотое правило <code>dd</code>:</strong> всегда указывайте на диск (<code>/dev/sdb</code>), а не на раздел (<code>/dev/sdb1</code>). Скрипт защищает ваш системный диск и требует двойного подтверждения.</li>
+</ul>
+
+<h2>Полезные ссылки</h2>
+<ul>
+<li>Kali ARM (образ для Raspberry Pi 2/3/4/5 64-bit): <a href="https://www.kali.org/get-kali/#kali-arm">kali.org/get-kali</a></li>
+<li>Raspberry Pi Imager: <a href="https://www.raspberrypi.com/software/">raspberrypi.com/software</a></li>
+<li>eaphammer: <a href="https://github.com/s0lst1c3/eaphammer">github.com/s0lst1c3/eaphammer</a></li>
+<li>airgeddon: <a href="https://github.com/v1s1t0r1sh3r3/airgeddon">github.com/v1s1t0r1sh3r3/airgeddon</a></li>
+<li>wifiphisher: <a href="https://github.com/wifiphisher/wifiphisher">github.com/wifiphisher/wifiphisher</a></li>
+<li>Tailscale: <a href="https://tailscale.com/">tailscale.com</a></li>
+</ul>
+
+<hr>
+<p><em>Часть моей серии о сборке собственного «Pineapple» на Raspberry Pi. Видео с полной сборкой уже в пути на моём <a href="https://www.youtube.com/@imcaletrio">канале YouTube</a>.</em></p></div> </div> </article>  </main> <footer class="mt-auto"> <div class="im-footer-inner w-full px-5 md:px-8 py-6 text-sm text-[rgb(var(--muted))]"> <div class="im-footer-row"> <div class="im-footer-brand">© 2026 imcaletrio</div> </div> </div> </footer> <script type="module">try{sessionStorage.getItem("imcaletrio_loader_shown")==="1"?document.documentElement.dataset.loader="skip":(document.documentElement.dataset.loader="run",window.setTimeout(()=>{document.documentElement.dataset.loader="skip";const e=document.getElementById("im-loader");e&&e.setAttribute("aria-hidden","true")},8e3))}catch{}</script> </body> </html>
