@@ -1,0 +1,10 @@
+# Artefactos de sesiones de Playwright MCP (previsualización local)
+.playwright-mcp/
+
+# Capturas de diseño/debug locales (solo en la raíz; no afecta a images/)
+/*.png
+
+# Temporales / editor / SO
+*.tmp
+*.swp
+.DS_Store
